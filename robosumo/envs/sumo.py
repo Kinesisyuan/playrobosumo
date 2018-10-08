@@ -69,7 +69,7 @@ class SumoEnv(MujocoEnv, EzPickle):
 
         # Consturct scene XML
         scene_xml_path = os.path.join(os.path.dirname(__file__),
-                                      "assets", "tatami.xml")
+                                      "assets", "tatami_with_cube.xml")
         agent_xml_paths = [_AGENTS[name] for name in agent_names]
         scene = construct_scene(scene_xml_path, agent_xml_paths,
                                 agent_scopes=agent_scopes,

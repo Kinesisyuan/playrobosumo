@@ -33,7 +33,7 @@ register(
     kwargs={
         'agent_names': ['ant', 'spider'],
         'agent_densities': [13., 39.],
-        'tatami_size': 2.0,
+        'tatami_size': 8.0,
         'timestep_limit': 500,
     },
 )

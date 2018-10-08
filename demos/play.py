@@ -1,9 +1,15 @@
 """
 Demonstrates RoboSumo with pre-trained policies.
 """
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import click
 import gym
 import os
+
+import glfw
+from OpenGL.GLU import *
+from OpenGL.GL import *
 
 import numpy as np
 import tensorflow as tf
@@ -20,7 +26,7 @@ POLICY_FUNC = {
 
 @click.command()
 @click.option("--env", type=str,
-              default="RoboSumo-Ant-vs-Ant-v0", show_default=True,
+              default="RoboSumo-Ant-vs-Spider-v0", show_default=True,
               help="Name of the environment.")
 @click.option("--policy-names", nargs=2, type=click.Choice(["mlp", "lstm"]),
               default=("mlp", "mlp"), show_default=True,
@@ -79,7 +85,7 @@ def main(env, policy_names, param_versions, max_episodes):
     observation = env.reset()
     print("-" * 5 + "Episode %d " % (num_episodes + 1) + "-" * 5)
     while num_episodes < max_episodes:
-        env.render()
+        env.render(mode = 'human')
         action = tuple([
             pi.act(stochastic=True, observation=observation[i])[0]
             for i, pi in enumerate(policy)

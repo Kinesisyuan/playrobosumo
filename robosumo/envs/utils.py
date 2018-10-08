@@ -62,6 +62,7 @@ def construct_scene(scene_xml_path, agent_xml_paths,
 
     # Set tatami size if specified
     if tatami_size is not None:
+        print("Colosseum size is ",tatami_size)
         for geom in scene_body.findall('geom'):
             if geom.get('name') == 'tatami':
                 size = tatami_size + 0.3
