@@ -1,16 +1,6 @@
-RoboSumo
+Implementing RoboSumo Environment
 ========
-
-This repository contains a set of competitive multi-agent environments used in the paper [Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments](https://arxiv.org/abs/1710.03641).
-
-<table>
-    <tr>
-        <td><img src="/assets/robosumo1.gif?raw=true" width="400"></td>
-        <td><img src="/assets/robosumo2.gif?raw=true" width="400"></td>
-    </tr>
-</table>
-
-## Installation
+## Installation of Robosumo with its requirements
 
 RoboSumo depends on `numpy`, `gym`, and `mujoco_py>=1.5` (if you haven't used MuJoCo before, please refer to [the installation guide](https://github.com/openai/mujoco-py)).
 Running demos with pre-trained policies additionally requires `tensorflow>=1.1.0` and `click`.
