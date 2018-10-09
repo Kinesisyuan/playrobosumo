@@ -53,5 +53,5 @@ Everytime when robosumo runs, it load the model (xml) file and construct a large
 ## Walls Change with Size of the Map
 I assume the pushable cube to be 2x2x2, and the target area to be 4x4 on one edge of the colosseum. Based on this, walls of the map can be generated according to the size that is set in `robosumo/epolicy_zoo/__init__.py`. Size = 8.0 means 8 units in each direction, thus the colosseum sizes 16x16.
 
-## Cube still not movable
-Theoretically, simply adding a free joint will make the white cube in the middle not fixed anymore, but doing so will raise a loading error which is not solved yet. Will look into it.
+## Cube now movable
+Now the cube is moveable in x,y directions with very low friction. But the policy is not good with the existence of the cube.
