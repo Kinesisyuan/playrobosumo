@@ -1,8 +1,3 @@
-========
-Playing with RoboSumo
-
-## Installation
-=======
 Implementing RoboSumo Environment
 ========
 ## Installation of Robosumo with its requirements
@@ -50,7 +45,3 @@ Options:
 
 ## Trying to modify the map
 
-# 1
-
-Robosumo load scene and agents separately, by changing file name in and I'm still studying the structure of mujoco xml file.
-Simply adding another body in the frame (see `robosumo/envs/assets/tatami_with_cube`) will cause loading error
