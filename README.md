@@ -1,7 +1,11 @@
-Playing wiht RoboSumo
 ========
+Playing with RoboSumo
 
 ## Installation
+=======
+Implementing RoboSumo Environment
+========
+## Installation of Robosumo with its requirements
 
 RoboSumo depends on `numpy`, `gym`, and `mujoco_py>=1.5` (if you haven't used MuJoCo before, please refer to [the installation guide](https://github.com/openai/mujoco-py)).
 Running demos with pre-trained policies additionally requires `tensorflow>=1.1.0` and `click`.
@@ -50,5 +54,3 @@ Options:
 
 Robosumo load scene and agents separately, by changing file name in and I'm still studying the structure of mujoco xml file.
 Simply adding another body in the frame (see `robosumo/envs/assets/tatami_with_cube`) will cause loading error
-
-
