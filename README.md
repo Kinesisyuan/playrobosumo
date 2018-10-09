@@ -1,14 +1,5 @@
-RoboSumo
+Playing wiht RoboSumo
 ========
-
-This repository contains a set of competitive multi-agent environments used in the paper [Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments](https://arxiv.org/abs/1710.03641).
-
-<table>
-    <tr>
-        <td><img src="/assets/robosumo1.gif?raw=true" width="400"></td>
-        <td><img src="/assets/robosumo2.gif?raw=true" width="400"></td>
-    </tr>
-</table>
 
 ## Installation
 
@@ -52,3 +43,12 @@ Options:
   --max_episodes INTEGER        Number of episodes.  [default: 20]
   --help                        Show this message and exit.
 ```
+
+## Trying to modify the map
+
+# 1
+
+Robosumo load scene and agents separately, by changing file name in and I'm still studying the structure of mujoco xml file.
+Simply adding another body in the frame (see `robosumo/envs/assets/tatami_with_cube`) will cause loading error
+
+

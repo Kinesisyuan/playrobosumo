@@ -26,7 +26,7 @@ POLICY_FUNC = {
 
 @click.command()
 @click.option("--env", type=str,
-              default="RoboSumo-Ant-vs-Spider-v0", show_default=True,
+              default="RoboSumo-Ant-vs-Bug-v0", show_default=True,
               help="Name of the environment.")
 @click.option("--policy-names", nargs=2, type=click.Choice(["mlp", "lstm"]),
               default=("mlp", "mlp"), show_default=True,

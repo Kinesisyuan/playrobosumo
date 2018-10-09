@@ -3,6 +3,7 @@ Multi-agent sumo environment.
 """
 import os
 import tempfile
+import shutil
 
 import numpy as np
 
@@ -77,10 +78,14 @@ class SumoEnv(MujocoEnv, EzPickle):
                                 **kwargs)
 
         # Init MuJoCo
+        # print("xml_path is ",xml_path)
         if xml_path is None:
             with tempfile.TemporaryDirectory() as tmpdir_name:
+                scene_catcher= "/home/kinesis/robosumo/worldxml/scene.xml"
                 scene_filepath = os.path.join(tmpdir_name, "scene.xml")
+                print("scene filepath is", scene_filepath)
                 scene.write(scene_filepath)
+                shutil.copy(scene_filepath,scene_catcher)
                 MujocoEnv.__init__(self, scene_filepath, frame_skip)
         else:
             with open(xml_path, 'w') as fp:

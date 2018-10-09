@@ -23,10 +23,31 @@
     <geom fromto="2 -2 .5  2 2 .5" name="rightborder" rgba=".18 .23 .38 1" size=".03" type="cylinder"/>
     <geom fromto="-2 -2 .5  2 -2 .5" name="bottomborder" rgba=".18 .23 .38 1" size=".03" type="cylinder"/>
     <geom fromto="-2 -2 .5  -2 2 .5" name="leftborder" rgba=".18 .23 .38 1" size=".03" type="cylinder"/>
-    <!-- Add a pushable box -->
-    <body name="pushable_obj" pos="0 0 1">
-      <joint type="free" />
-      <geom type="box" size="1 2 3" rgba="1 0 1" />
+    <!-- Walls -->
+    <body name="south_wall" pos="0 -8.15 1.5">
+      <geom name="s_wall" type="box" size="8.35 0.20 1.5" rgba="0.3 0.3 0.3 1"/>
     </body>
+    <body name="north_wall" pos="0 8.15 1.5">
+      <geom name="n_wall" type="box" size="8.35 0.20 1.5" rgba="0.3 0.3 0.3 1"/>
+    </body>
+
+    <body name="west_wall" pos="-8.15 0 1.5">
+      <geom name="w_wall" type="box" size="0.2 7.95 1.5" rgba="0.3 0.3 0.3 1"/>
+    </body>
+    <body name="east_wall" pos="8.15 0 1.5">
+      <geom name="e_wall" type="box" size="0.2 7.95 1.5" rgba="0.3 0.3 0.3 1"/>
+    </body>
+
+    <body name="northwest" pos="8.15 0 1.5">
+      <geom name="nw_wall" type="box" size="0.2 7.95 1.5" rgba="0.3 0.3 0.3 1"/>
+    </body>
+    <body name="northeast" pos="8.15 0 1.5">
+      <geom name="ne_wall" type="box" size="0.2 7.95 1.5" rgba="0.3 0.3 0.3 1"/>
+    </body>
+    <!-- Add a pushable box -->
+    <body name="pushable_obj" pos="0 0 3">
+      <geom type="box" size="1 1 1" rgba="1 1 1 1" />
+    </body>
+
   </worldbody>
 </mujoco>

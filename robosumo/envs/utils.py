@@ -87,6 +87,76 @@ def construct_scene(scene_xml_path, agent_xml_paths,
                     "-{size:.2f} -{size:.2f} 0.5  -{size:.2f} {size:.2f} 0.5" \
                     .format(size=tatami_size)
                 geom.set('fromto', fromto)
+            #Setting walls' size
+        for body in scene_body.findall("body"):
+            geom = body.find('geom')
+
+            if geom.get('name') == "s_wall":
+                newsize = \
+                    "{size:.2f} 0.20 1.5" \
+                    .format(size = tatami_size + 0.35)
+                print(geom.get('name'), "size is", newsize)
+                geom.set('size', newsize)
+            if geom.get('name') == "w_wall":
+                newsize = \
+                    "0.2 {size:.2f} 1.5" \
+                    .format(size = (2 * tatami_size - 4)/2 - 0.05)
+                print(geom.get('name'), "size is", newsize)
+                geom.set('size', newsize)
+            if geom.get('name') == "e_wall":
+                newsize = \
+                    "0.2 {size:.2f} 1.5" \
+                    .format(size = (2 * tatami_size - 4)/2 - 0.05)
+                print(geom.get('name'), "size is", newsize)
+                geom.set('size', newsize)
+            if geom.get('name') == "n_wall":
+                newsize = "2 0.20 1.5"
+                print(geom.get('name'), "size is", newsize)
+                geom.set('size', newsize)
+            if geom.get('name') == "nw_wall":
+                newsize = \
+                    "{} {} 1.5" \
+                    .format((tatami_size + 0.35 - 2)/2, 2.2)
+                print(geom.get('name'), "size is", newsize)
+                geom.set('size', newsize)
+            if geom.get('name') == "ne_wall":
+                newsize = \
+                    "{} {} 1.5" \
+                    .format((tatami_size + 0.35 - 2)/2, 2.2)
+                print(geom.get('name'), "size is", newsize)
+                geom.set('size', newsize)
+        #Setting walls' positions
+        for body in scene_body.findall('body'):
+            if body.get('name') == "south_wall":
+                newpos = \
+                    "0 -{size:.2f} 1.5"\
+                    .format(size = tatami_size + 0.15)
+                body.set('pos', newpos)
+            if body.get('name') == "west_wall":
+                newpos = \
+                    "{} {} 1.5"\
+                    .format(-(tatami_size + 0.15),-2)
+                body.set('pos', newpos)
+            if body.get('name') == "east_wall":
+                newpos = \
+                    "{} {} 1.5"\
+                    .format(tatami_size + 0.15,-2)
+                body.set('pos', newpos)
+            if body.get('name') == "north_wall":
+                newpos = \
+                    "0 {size:.2f} 1.5"\
+                    .format(size = tatami_size + 0.15)
+                body.set('pos', newpos)
+            if body.get('name') == "northeast":
+                newpos = \
+                    "{} {} 1.5"\
+                    .format((tatami_size + 2.15)/2 + 0.1, ((tatami_size - 4 - 0.05) + (tatami_size + 0.35))/2 )
+                body.set('pos', newpos)
+            if body.get('name') == "northwest":
+                newpos = \
+                    "{} {} 1.5"\
+                    .format(-(tatami_size + 2.15)/2 - 0.1, ((tatami_size - 4 - 0.05) + (tatami_size + 0.35))/2)
+                body.set('pos', newpos)
 
     # Resolve colors
     if rgb is None:
