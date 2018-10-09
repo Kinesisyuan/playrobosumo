@@ -1,8 +1,3 @@
-========
-Playing with RoboSumo
-
-## Installation
-=======
 Implementing RoboSumo Environment
 ========
 ## Installation of Robosumo with its requirements
@@ -50,7 +45,13 @@ Options:
 
 ## Trying to modify the map
 
-# 1
+The system construct the environment (map) in a function in `robosumo/envs/utils.py` and related modifications to the world parameters are made when the function runs.
 
-Robosumo load scene and agents separately, by changing file name in and I'm still studying the structure of mujoco xml file.
-Simply adding another body in the frame (see `robosumo/envs/assets/tatami_with_cube`) will cause loading error
+## Modify username of "scene catcher"
+Everytime when robosumo runs, it load the model (xml) file and construct a large .xml that includes both agents and the environment. This large file called "scene.xml" are stored in a tmp directory and can be found nowhere after running, even when an error occurs. So I add some lines to `robosumo/envs/sumo.py` to catch it in order to check what problem may occur in the final xml model. Of course the path includes my username, so change it to yours before running.
+
+## Walls Change with Size of the Map
+I assume the pushable cube to be 2x2x2, and the target area to be 4x4 on one edge of the colosseum. Based on this, walls of the map can be generated according to the size that is set in `robosumo/epolicy_zoo/__init__.py`. Size = 8.0 means 8 units in each direction, thus the colosseum sizes 16x16.
+
+## Cube still not movable
+Theoretically, simply adding a free joint will make the white cube in the middle not fixed anymore, but doing so will raise a loading error which is not solved yet. Will look into it.
