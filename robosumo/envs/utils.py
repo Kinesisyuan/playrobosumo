@@ -60,6 +60,42 @@ def construct_scene(scene_xml_path, agent_xml_paths,
     scene_actuator = None
     scene_sensors = None
 
+    #Make the central cube movable
+    #Now added in the xml file, so here committed
+    # worldbody = scene_root.find("worldbody")
+    # moveable_body = ET.SubElement(worldbody, "body" ,name="moveable_object", pos="0 0 1.5",)
+    # ET.SubElement(
+    #     moveable_body, "geom",
+    #     name="block",
+    #     pos="0 0 1.5",
+    #     size="1 1 1",
+    #     type="box",
+    #     material="",
+    #     mass="0.001",
+    #     contype="1",
+    #     conaffinity="1",
+    #     rgba="1 1 1 1")
+    # ET.SubElement(
+    #     moveable_body, "joint",
+    #     armature="0",
+    #     axis="1 0 0",
+    #     damping="0.0",
+    #     limited="true",
+    #     margin="0.01",
+    #     name="moveable_x",
+    #     pos="0 0 0",
+    #     type="slide")
+    # ET.SubElement(
+    #     moveable_body, "joint",
+    #     armature="0",
+    #     axis="0 1 0",
+    #     damping="0.0",
+    #     limited="true",
+    #     margin="0.01",
+    #     name="moveable_y",
+    #     pos="0 0 0",
+    #     type="slide")
+
     # Set tatami size if specified
     if tatami_size is not None:
         print("Colosseum size is ",tatami_size)
